@@ -1,0 +1,55 @@
+NAME
+
+    WWW::DPD::Detail - Perl module for the DPD online tracking service with details.
+
+SYNOPSIS
+
+	use WWW::DPD::Detail;
+	my($newdata,$other) = dpdcheck('paketnumber','de');#de or en for text in german or english
+
+	foreach my $key (keys %$other){# shipnumber
+		print $key . ": " . ${$other}{$key} . "\n";
+	}
+	print "\nDetails:\n";
+
+	foreach my $key (@{$newdata}){
+		#foreach my $key2 (keys %{$key}){#datum, depot, ort, daten, land, plz, route, tour, code
+		#	print ${$key}{$key2};
+		#	print "\t";
+		#}
+
+		print ${$key}{datum};
+		print "\t";
+		print ${$key}{depot};
+		print "\t";
+		print ${$key}{ort};
+		print "\t";
+		print ${$key}{daten};
+		print "\t";
+		print ${$key}{land}."-".${$key}{plz}."-".${$key}{route};
+		print "\t";
+		print ${$key}{tour};
+		print "\t";
+		print ${$key}{code};
+		print "\n";
+	}
+
+DESCRIPTION
+
+WWW::DPD::Detail - Perl module for the DPD online tracking service with details.
+
+AUTHOR
+
+    Stefan Gipper <stefanos@cpan.org>, http://www.coder-world.de/
+
+COPYRIGHT
+
+	WWW::DPD::Detail is Copyright (c) 2010 Stefan Gipper
+	All rights reserved.
+
+	This program is free software; you can redistribute
+	it and/or modify it under the same terms as Perl itself.
+
+SEE ALSO
+
+    perl(1)
