@@ -4,7 +4,7 @@ use strict;
 use Exporter;
 our @ISA = qw/Exporter/;
 our @EXPORT = qw/dpdcheck/;
-our $VERSION = '0.1';
+our $VERSION = '0.2';
 use LWP::Simple;
 
 sub dpdcheck {
@@ -82,6 +82,7 @@ WWW::DPD::Detail - Perl module for the DPD online tracking service with details.
 		print "\n";
 	}
 
+	# see https://extranet.dpd.de/data/lang_files/REMARKS.de.pdf
 
 =head1 DESCRIPTION
 
@@ -89,12 +90,9 @@ WWW::DPD::Detail - Perl module for the DPD online tracking service with details.
 
 =head1 AUTHOR
 
-    Stefan Gipper <stefanos@cpan.org>, http://www.coder-world.de/
+    -
 
 =head1 COPYRIGHT
-
-	WWW::DPD::Detail is Copyright (c) 2010 Stefan Gipper
-	All rights reserved.
 
 	This program is free software; you can redistribute
 	it and/or modify it under the same terms as Perl itself.
